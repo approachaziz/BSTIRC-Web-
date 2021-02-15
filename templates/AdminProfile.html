@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    
+
+    $(function () {
+
+$("#content2").hide();
+
+$(".insertCorse, .link2").bind("click", function () {
+
+  $("#content, #content2").hide();        
+    
+  if ($(this).attr("class") == "insertCorse")
+  {
+    $("#content").show();
+  }
+  else 
+  { 
+    $("#content2").show();
+  }
+});
+
+});
+      </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/admin/css/style.css">
+  </head>
+  <body> 
+    {% for user in data: %}
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+          <img  height="200"   style="border-radius:50%;" class="card-img-top"  src="../static/adminPhoto/{{user["picture"]}}" />
+     {% endfor %}
+          <!-- <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a> -->
+       {{data["name"]}}
+          <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Meetings and Appointment</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Monday</a>
+
+                </li>
+                <li>
+                    <a href="#">Tuesday</a>
+                </li>
+                <li>
+                    <a href="#">Wednesday</a>
+                </li>
+                <li>
+                  <a href="#">Thursday</a>
+              </li>
+              <li>
+                <a href="#">Friday</a>
+            </li>
+            <li>
+              <a href="#">Satuday</a>
+          </li>
+          
+            
+	            </ul>
+	          </li>
+	          
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Trainigs and courses</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                  <!-- <a href="#" class="link1">Link 1</a>
+                  <a href="#" class="link2">Link 2</a> -->
+                    <a href="#" class="insertCorse">Insert courses</a>
+                </li>
+                <li>
+                    <a href="#" class="link2">See unGoing courses</a>
+                </li>
+                <!-- <li>
+                    <a href="#">Page 3</a>
+                </li> -->
+              </ul>
+	          </li>
+	          <!-- <li>
+              <a href="#">Portfolio</a>
+	          </li> -->
+	          <li>
+              <a href="#">Add Admin</a>
+            </li>
+            <!-- <button>Remove content of the div element</button> -->
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Web is made by <i class="icon-heart" aria-hidden="true"></i> by <br/><strong> Abdul-Aziz</strong>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Meetings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Co</a>
+                </li>
+              </ul> -->
+              <!-- <img height="50" width="350" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/> -->
+
+            </div>
+          </div>
+          <a href="/">
+          <img height="50" width="350" style="border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; border-top-left-radius: 5rem;" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/>
+        </a>
+        </nav>
+
+        <h2 class="mb-4">Meetings and Appointments</h2>
+     <table>
+       <tr>Select Free Days</tr>
+       <tr>
+         <form action="/selectFreeDays" method="POST">
+         <td>Day1</td>
+          <td>
+
+            <input type="date" name="day1"/> 
+         </td>
+         <td>Day2</td>
+         <td>
+          <input type="date" name="day2"/> 
+       </td>
+       <td>Day4</td>
+       <td>
+        <input type="date" name="day3"/> 
+     </td>
+     <td>Day4</td>
+     <td>
+      <input type="date" name="day4"/> 
+   </td>
+   <td>
+    <input type="submit" value="submit"/>  
+  </td>
+  
+    
+</tr>
+</form>
+   
+      </table>
+      <br/>
+
+      <h2>
+        Upcoming Appoinments 
+      </h2>
+      </div>
+
+
+      <div id="content2" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Meetings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Co</a>
+                </li>
+              </ul> -->
+              <!-- <img height="50" width="350" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/> -->
+ 
+            </div>
+
+          </div>
+          <a href="/">
+          <img height="50" width="350" style="border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; border-top-left-radius: 5rem;" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/>
+        </a>
+        </nav>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <h2 class="text-center">Contac Form</h2>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-8 col-lg-6 pb-5">
+
+
+                    <!--Form with header-->
+
+                    <form action="mail.php" method="post">
+                        <div class="card border-primary rounded-0">
+                            <div class="card-header p-0">
+                                <div class="bg-info text-white text-center py-2">
+                                    <h3><i class="fa fa-envelope"></i> Contactanos</h3>
+                                    <p class="m-0">Con gusto te ayudaremos</p>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+
+                                <!--Body-->
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
+                                        </div>
+                                        <input type="email" class="form-control" id="nombre" name="email" placeholder="ejemplo@gmail.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                                        </div>
+                                        <textarea class="form-control" placeholder="Envianos tu Mensaje" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <input type="submit" value="Enviar" class="btn btn-info btn-block rounded-0 py-2">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!--Form with header-->
+
+
+                </div>
+	</div>
+</div>
+<br/>
+
+         
+    </div>
+   
+    <div id="content3" class="p-4 p-md-5">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Meetings</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Co</a>
+              </li>
+            </ul> -->
+            <!-- <img height="50" width="350" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/> -->
+
+          </div>
+        </div>
+        <a href="/">
+        <img height="50" width="350" style="border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; border-top-left-radius: 5rem;" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/>
+      </a>
+      </nav>
+
+      <h2 class="mb-4">Meetings and Appointments</h2>
+   
+   
+    </div>
+
+    <div id="content4" class="p-4 p-md-5">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Meetings</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Co</a>
+              </li>
+            </ul> -->
+            <!-- <img height="50" width="350" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/> -->
+
+          </div>
+        </div>
+        <a href="/">
+        <img height="50" width="350" style="border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; border-top-left-radius: 5rem;" src="../static/New folder/logo.png"  alt="bin-Syed-training-institute"/>
+      </a>
+      </nav>
+
+      <h2 class="mb-4">Meetings and Appointments</h2>
+   <table>
+     <tr>Select Free Days</tr>
+     <tr>
+       <form action="/selectFreeDays" method="POST">
+       <td>Day1</td>
+        <td>
+
+          <input type="date" name="day1"/> 
+       </td>
+       <td>Day2</td>
+       <td>
+        <input type="date" name="day2"/> 
+     </td>
+     <td>Day4</td>
+     <td>
+      <input type="date" name="day3"/> 
+   </td>
+   <td>Day4</td>
+   <td>
+    <input type="date" name="day4"/> 
+ </td>
+ <td>
+  <input type="submit" value="submit"/>  
+</td>
+
+  
+</tr>
+</form>
+ 
+    </table>
+    <br/>
+
+    <h2>
+      Upcoming Appoinments 
+    </h2>
+    </div>
+
+		</div>
+
+    <script src="../static/admin/js/jquery.min.js"></script>
+    <script src="../static/admin/js/popper.js"></script>
+    <script src="../static/admin/js/bootstrap.min.js"></script>
+    <script src="../static/admin/js/main.js"></script>
+  </body>
+</html>
